@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+   
+name: 'Example'
+description: 'Receives file and generates output'
+inputs:
+  file-path:  # id of input
+    description: "Path to test script"
+    required: true
+    default: 'test-file.js'
+outputs:
+  results-file: # id of output
+    description: "Path to results file"
+
